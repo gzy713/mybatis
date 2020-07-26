@@ -1,0 +1,11 @@
+CREATE  DATABASE mybatis_02;
+
+
+        CREATE  table EMPLOYEE(
+
+        id int  primary key  auto_increment,
+        lastName  varchar(100),
+        email  varchar(100),
+        gender  varchar(100)
+
+        )

@@ -1,0 +1,15 @@
+1),注意 idea 使用mybatis时  如果mapper.xml与借口类写在一起时
+    idea无法扫描到xml文件
+    <!-- Register all interfaces in a package as mappers -->
+    <mappers>
+      <package name="org.mybatis.builder"/>
+    </mappers>
+2),  代码sqlsession
+            InputStream resourceAsStream = Resources.getResourceAsStream("mybatis-config.xml");
+            SqlSessionFactory build = new SqlSessionFactoryBuilder().build(resourceAsStream);
+            SqlSession sqlSession = build.openSession();
+        sqlsession和jdbc的connect一样是线程不安全的    不要写在全局变量中  最后写在全局变量中 用完记得关闭
+3), mybatis有两种实现方式
+        1,(无接口时)session.selectone(namespace.id)
+        2,(有接口时)session.getmapper(namespace(com.lamp.interface).id)
+
