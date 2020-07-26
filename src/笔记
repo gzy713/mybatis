@@ -11,5 +11,5 @@
         sqlsession和jdbc的connect一样是线程不安全的    不要写在全局变量中  最后写在全局变量中 用完记得关闭
 3), mybatis有两种实现方式
         1,(无接口时)session.selectone(namespace.id)
-        2,(有接口时)session.getmapper(namespace(com.lamp.interface).id)
+        2,(有接口时)session.getmapper(mapper.class)  获取的是街口的代理对象
 
